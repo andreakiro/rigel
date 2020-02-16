@@ -1,6 +1,8 @@
 package rigel;
 
-public class Preconditions {
+import rigel.math.Interval;
+
+public final class Preconditions {
 
 	private Preconditions() {}
 
