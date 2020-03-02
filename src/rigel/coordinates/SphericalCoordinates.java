@@ -2,7 +2,7 @@ package rigel.coordinates;
 
 import static rigel.math.Angle.toDeg;
 
-public abstract class SphericalCoordinates {
+abstract class SphericalCoordinates {
 	
 	private final double lon, lat;
 
