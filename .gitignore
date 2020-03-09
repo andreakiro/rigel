@@ -13,3 +13,6 @@ tmp/
 
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+### Mac related files ###
+.DS_Store
