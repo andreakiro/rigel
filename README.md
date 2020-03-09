@@ -15,5 +15,3 @@ The blue lines link the stars together forming a number of [asterisms]("https://
 The project is based on the fourth edition of the book _Practical Astronomy with your Computer or Spreadsheet by Peter Duffett-Smith and Jonathan Zwart_, from which all the formulas for astronomical calculation are extracted.
 
 # Usage
-
-Empty
