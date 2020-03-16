@@ -12,7 +12,7 @@ The blue lines link the stars together forming a number of [asterisms](https://e
 
 # Catalogs
 
-### Stars
+### Stars
 
 For this project, we will use a simplified version of the [HYG catalog](https://github.com/astronexus/HYG-Database), which results from the compilation of three famous catalogs: the Hipparcos catalog, the Yale catalog and the Gliese catalog.
 
