@@ -26,7 +26,7 @@ public final class StarCatalogue {
                     throw new IllegalArgumentException();
                 indices.add(starIndex);
             }
-            asterismIndices.put(asterism, indices);
+            asterismIndices.put(asterism, Collections.unmodifiableList(indices));
         }
 
         this.stars = List.copyOf(stars);
