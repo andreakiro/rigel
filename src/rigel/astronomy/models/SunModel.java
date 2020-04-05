@@ -25,11 +25,11 @@ public enum SunModel implements CelestialObjectModel<Sun> {
     private static final double ANGULAR_SIZE_0 = ofDeg(0.533_128);
 
     @Override
-    public Sun at(double daysSinceJ2010, EclipticToEquatorialConversion eclToHor) {
+    public Sun at(double daysSinceJ2010, EclipticToEquatorialConversion eclToEqu) {
         var meanAnomaly = meanAnomaly(daysSinceJ2010);
         var trueAnomaly = trueAnomaly(meanAnomaly);
         var eclipticPos = eclipticPosition(trueAnomaly);
-        var equatorialPos = eclToHor.apply(eclipticPos);
+        var equatorialPos = eclToEqu.apply(eclipticPos);
         var angularSize = ANGULAR_SIZE_0 * (1d + ECCENTRICITY * cos(trueAnomaly)) / ONE_MINUS_ECCENTRICITY_SQUARED;
         return new Sun(eclipticPos, equatorialPos, (float) angularSize, (float) meanAnomaly);
     }
