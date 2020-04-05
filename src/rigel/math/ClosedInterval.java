@@ -8,10 +8,6 @@ import java.util.Locale;
 
 public final class ClosedInterval extends Interval {
 	
-	public static void main(String[] args) {
-		System.out.println("hi");
-	}
-	
     public static ClosedInterval of(double low, double high) {
         checkArgument(low < high);
         return new ClosedInterval(low, high);

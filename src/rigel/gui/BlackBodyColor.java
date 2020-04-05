@@ -46,3 +46,4 @@ public final class BlackBodyColor {
         return COLOR_TABLE.get((int) round((temperature - TEMPERATURE_INTERVAL.low()) / TEMPERATURE_STEP));
     }
 }
+
