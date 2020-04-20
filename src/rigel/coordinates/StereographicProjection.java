@@ -7,7 +7,6 @@ import java.util.function.Function;
 import rigel.math.Angle;
 
 public final class StereographicProjection implements Function<HorizontalCoordinates, CartesianCoordinates> {
-	
     private final HorizontalCoordinates center;
     private final double sinCenterAlt, cosCenterAlt;
 
@@ -47,6 +46,9 @@ public final class StereographicProjection implements Function<HorizontalCoordin
     }
 
     public HorizontalCoordinates inverseApply(CartesianCoordinates xy) {
+        if (xy.x() == 0 && xy.y() == 0)
+            return center;
+
         var rhoSq = xy.x() * xy.x() + xy.y() * xy.y();
         var rho = sqrt(rhoSq);
         var sinC = (2d * rho) / (rhoSq + 1d);
