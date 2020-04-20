@@ -28,6 +28,7 @@ public final class Angle {
     }
 
     public static double ofDMS(int deg, int min, double sec) {
+        checkArgument(0 <= deg);
         checkArgument(0 <= min && min < MIN_PER_DEG);
         checkArgument(0 <= sec && sec < SEC_PER_MIN);
         return ofDeg(deg + min * DEG_PER_MIN + sec * DEG_PER_SEC);
