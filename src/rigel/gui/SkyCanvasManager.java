@@ -1,5 +1,27 @@
 package rigel.gui;
 
+import java.util.List;
+import java.util.Map;
+
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ObservableDoubleValue;
+import javafx.beans.value.ObservableValue;
+import javafx.geometry.Point2D;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.input.KeyCode;
+import javafx.scene.transform.NonInvertibleTransformException;
+import javafx.scene.transform.Transform;
+import rigel.astronomy.ObservedSky;
+import rigel.astronomy.catalogs.StarCatalogue;
+import rigel.astronomy.objects.CelestialObject;
+import rigel.coordinates.CartesianCoordinates;
+import rigel.coordinates.HorizontalCoordinates;
+import rigel.coordinates.StereographicProjection;
+import rigel.math.Angle;
+import rigel.math.ClosedInterval;
+import rigel.math.RightOpenInterval;
+
 public final class SkyCanvasManager {
     private static final ClosedInterval FIELD_OF_VIEW_INTERVAL = ClosedInterval.of(30, 150);
     private static final RightOpenInterval VIEWING_AZ_INTERVAL = RightOpenInterval.of(0, 360);
