@@ -16,3 +16,7 @@ tmp/
 
 ### Mac related files ###
 .DS_Store
+
+### Intellij IDEA related files ###
+.idea
+*.iml
