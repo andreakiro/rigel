@@ -5,6 +5,8 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.value.ObservableValue;
 import rigel.coordinates.GeographicCoordinates;
 
+import static javafx.beans.binding.Bindings.createObjectBinding;
+
 public final class ObserverLocationBean {
     private final DoubleProperty lonDeg;
     private final DoubleProperty latDeg;

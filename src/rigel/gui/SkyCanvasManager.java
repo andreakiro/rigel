@@ -1,8 +1,5 @@
 package rigel.gui;
 
-import java.util.List;
-import java.util.Map;
-
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableDoubleValue;
@@ -21,6 +18,12 @@ import rigel.coordinates.StereographicProjection;
 import rigel.math.Angle;
 import rigel.math.ClosedInterval;
 import rigel.math.RightOpenInterval;
+
+import java.util.List;
+import java.util.Map;
+
+import static javafx.beans.binding.Bindings.createDoubleBinding;
+import static javafx.beans.binding.Bindings.createObjectBinding;
 
 public final class SkyCanvasManager {
     private static final ClosedInterval FIELD_OF_VIEW_INTERVAL = ClosedInterval.of(30, 150);
@@ -162,7 +165,7 @@ public final class SkyCanvasManager {
         canvas.setOnScroll(e -> {
             var dx = e.getDeltaX();
             var dy = e.getDeltaY();
-            var d = abs(dx) >= abs(dy) ? dx : dy;
+            var d = Math.abs(dx) >= Math.abs(dy) ? dx : dy;
             var newFieldOfView = FIELD_OF_VIEW_INTERVAL.clip(viewingParametersBean.getFieldOfViewDeg() + d);
             viewingParametersBean.setFieldOfViewDeg(newFieldOfView);
         });
